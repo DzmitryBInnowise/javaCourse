@@ -10,8 +10,8 @@
 4. Идем в папку practiceAnswers
 5. Создаем java файл с номером лекции и своим именем e.g. - FirstSessionVasyaPupkin.java
 6. Решаем задания и делаем комит: 
-git checkout -b "<branch Name>" -> 
-git add "<fileName>" -> 
+git checkout -b "branch Name" -> 
+git add "file Name" -> 
 git commit -m "Your Message here" -> 
-git push origin "<branch Name>"
+git push origin "branch Name"
 7. на юае сделать пул реквест
