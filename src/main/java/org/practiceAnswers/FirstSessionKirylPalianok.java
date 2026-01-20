@@ -15,10 +15,10 @@ public class FirstSessionKirylPalianok {
 		 * =====================================================
 		 */
 
-		task1_1();
-		task1_2();
-		task1_3();
-		task1_4();
+		showPrimitiveTypes();
+		checkConditions();
+		workWithArrayReferences();
+		showStringBehavior();
 
 		/*
 		 * =====================================================
@@ -26,9 +26,9 @@ public class FirstSessionKirylPalianok {
 		 * =====================================================
 		 */
 
-		task2_1();
-		task2_2();
-		task2_3();
+		checkScore();
+		showDayOfWeek();
+		checkNumberSign();
 
 		/*
 		 * =====================================================
@@ -36,15 +36,15 @@ public class FirstSessionKirylPalianok {
 		 * =====================================================
 		 */
 
-		task3_1();
-		task3_2();
-		task3_3();
-		task3_4();
-		task3_5();
+		printNumbers();
+		calculateSum();
+		printReverseNumbers();
+		readNumbers();
+		workWithArray();
 
 	}
 
-	public static void task1_1() {
+	public static void showPrimitiveTypes() {
 		System.out.println("=== Задание 1.1 — Простейшие переменные ===");
 
 		// Создай переменные всех примитивных типов
@@ -69,7 +69,7 @@ public class FirstSessionKirylPalianok {
 		System.out.println("boolean: " + isVisible);
 	}
 
-	public static void task1_2() {
+	public static void checkConditions() {
 		System.out.println("\n=== Задание 1.2 — Логические операции ===");
 
 		// Создай две переменные int a и int b
@@ -84,7 +84,7 @@ public class FirstSessionKirylPalianok {
 		System.out.println(result);
 	}
 
-	public static void task1_3() {
+	public static void workWithArrayReferences() {
 		System.out.println("\n=== Задание 1.3 — Ссылочные типы ===");
 
 		// Создай массив из 5 чисел
@@ -110,7 +110,7 @@ public class FirstSessionKirylPalianok {
 		*/
 	}
 
-	public static void task1_4() {
+	public static void showStringBehavior() {
 		System.out.println("\n=== Задание 1.4 — String ===");
 
 		// Создай две строки s1 и s2
@@ -136,7 +136,7 @@ public class FirstSessionKirylPalianok {
 		 */
 	}
 
-	public static void task2_1() {
+	public static void checkScore() {
 		System.out.println("\n=== Задание 2.1 — Оценки ===");
 
 		// Создай int score (0-100)
@@ -160,7 +160,7 @@ public class FirstSessionKirylPalianok {
 		}
 	}
 
-	public static void task2_2() {
+	public static void showDayOfWeek() {
 		System.out.println("\n=== Задание 2.2 — Дни недели ===");
 
 		// Создай int day (1-7)
@@ -197,7 +197,7 @@ public class FirstSessionKirylPalianok {
 		}
 	}
 
-	public static void task2_3() {
+	public static void checkNumberSign() {
 		System.out.println("\n=== Задание 2.3 — Проверка числа ===");
 
 		// Создай int number
@@ -217,7 +217,7 @@ public class FirstSessionKirylPalianok {
 		}
 	}
 
-	public static void task3_1() {
+	public static void printNumbers() {
 		System.out.println("\n=== Задание 3.1 — Счётчик (for) ===");
 
 		// Используя for, выведи числа от 1 до 10
@@ -227,7 +227,7 @@ public class FirstSessionKirylPalianok {
 		}
 	}
 
-	public static void task3_2() {
+	public static void calculateSum() {
 		System.out.println("\n=== Задание 3.2 — Сумма чисел (for) ===");
 
 		// Используя for, посчитай сумму чисел от 1 до 100 и выведи результат
@@ -243,7 +243,7 @@ public class FirstSessionKirylPalianok {
 		System.out.println("Сумма: " + sum);
 	}
 
-	public static void task3_3() {
+	public static void printReverseNumbers() {
 		System.out.println("\n=== Задание 3.3 — Числа в обратном порядке (while) ===");
 
 		// Используя while, выводи числа от 10 до 1 в обратном порядке
@@ -255,7 +255,7 @@ public class FirstSessionKirylPalianok {
 		}
 	}
 
-	public static void task3_4() {
+	public static void readNumbers() {
 		System.out.println("\n=== Задание 3.4 — Ввод числа до >100 (do-while) ===");
 
 		// Используя do-while, спрашивай пользователя вводить число
@@ -271,7 +271,7 @@ public class FirstSessionKirylPalianok {
 		System.out.println("Спасибо! Вы ввели число больше 100");
 	}
 
-	public static void task3_5() {
+	public static void workWithArray() {
 		System.out.println("\n=== Задание 3.5 — Массив и итерации ===");
 
 		// Создай массив из 5 чисел
