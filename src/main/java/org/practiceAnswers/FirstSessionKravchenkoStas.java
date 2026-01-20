@@ -18,8 +18,8 @@ public class FirstSessionKravchenkoStas {
         char charVariable = 'F';
         boolean booleanVariable = true;
 
-        System.out.println("\n Все переменные: " + byteVariable + shortVariable + intVariable + floatVariable +
-                doubleVariable + charVariable + booleanVariable);
+        System.out.println("\n Все переменные: " +" " +byteVariable+" " + shortVariable+" " + intVariable+" " + floatVariable+" " +
+                doubleVariable+" " + charVariable+" " + booleanVariable);
 
         System.out.println("\n=== Задание 1.2 — Логические операции ===");
         // TODO: Создай две переменные int a и int b
@@ -30,15 +30,9 @@ public class FirstSessionKravchenkoStas {
         int a = 5;
         int b = 95;
 
-        boolean result = false;
+        boolean result = a > 0 && b < 100;
 
-        if(a > 0 && b < 100){
-            result = true;
-            System.out.println("\n Ответ = " + result);
-        }
-        else {
-            result = false;
-        }
+        System.out.println("Ответ = " + result);
 
         System.out.println("\n=== Задание 1.3 — Ссылочные типы ===");
         // TODO: Создай массив из 5 чисел
@@ -46,14 +40,14 @@ public class FirstSessionKravchenkoStas {
         // Измени первый элемент копии
         // Выведи оба массива и объясни результат
 
-        int[] mass1 = {5,6,7};
-        int[] mass2 = mass1;
+        int[] mass1 = {5,6,7,9,10};
+        int[] mass2 = Arrays.copyOf(mass1,mass1.length);
 
         mass2[0] = 44;
 
         System.out.println("Первый массив = " + Arrays.toString(mass1));
         System.out.println("Второй массив = " + Arrays.toString(mass2));
-        System.out.println("mass1 и mass2 это не два массива,а две ссылки на один и тот же массив,поэтому первый элемент будет 44");
+        System.out.println("mass1 и mass2 — разные массивы, поэтому изменение mass2 не влияет на mass1");
 
         System.out.println("\n=== Задание 1.4 — String ===");
         // TODO: Создай две строки s1 и s2
@@ -112,6 +106,7 @@ public class FirstSessionKravchenkoStas {
                 break;
             case 4:
                 System.out.println("Четверг");
+                break;
             case 5:
                 System.out.println("Пятница");
                 break;
@@ -130,7 +125,7 @@ public class FirstSessionKravchenkoStas {
         // Если число >0 → "Положительное"
         // Если число <0 → "Отрицательное"
         // Если число ==0 → "Ноль"
-        int number = (int)(Math.random() * 21) - 10;
+        int number = (int)(Math.random() * 20) - 10;
 
         System.out.println("Число = " + number);
 
@@ -141,16 +136,11 @@ public class FirstSessionKravchenkoStas {
         } else {
             System.out.println("Положительное");
         }
-        /*
-         * =====================================================
-         * 3️⃣ ЦИКЛЫ И ИТЕРАЦИИ
-         * =====================================================
-         */
 
         System.out.println("\n=== Задание 3.1 — Счётчик (for) ===");
         // TODO: Используя for, выведи числа от 1 до 10
 
-        for (int i = 0; i<11; i++ ){
+        for (int i = 1; i<=10; i++ ){
             System.out.println(i);
         }
 
@@ -188,6 +178,8 @@ public class FirstSessionKravchenkoStas {
         } while (numb <= 100);
 
         System.out.println("Вы ввели: " + numb);
+
+        scanner.close();
 
         System.out.println("\n=== Задание 3.5 — Массив и итерации ===");
         // TODO: Создай массив из 5 чисел
