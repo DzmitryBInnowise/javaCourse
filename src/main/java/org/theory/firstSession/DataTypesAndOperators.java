@@ -160,8 +160,8 @@ public class DataTypesAndOperators {
         int x = 10;
         int y = 5;
 
-        boolean result1 = x > y && x > 0; // И (AND)
-        boolean result2 = x < y || y == 5; // ИЛИ (OR)
+        boolean result1 = x > y & x > 0; // И (AND)
+        boolean result2 = x < y | y == 5; // ИЛИ (OR)
         boolean result3 = !(x == y); // НЕ (NOT)
 
         System.out.println(result1);
