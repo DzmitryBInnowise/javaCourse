@@ -127,8 +127,8 @@ public class DataTypesAndOperators {
          */
 
         // Примитивы НЕ имеют методов
-        int x = 5;
-        // x.toString(); // ошибка компиляции
+        int s = 5;
+        // s.toString(); // ошибка компиляции
 
         // Преобразование типов (casting)
         double bigDouble = 9.99;
