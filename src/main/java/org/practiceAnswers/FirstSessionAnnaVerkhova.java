@@ -53,8 +53,8 @@ public class FirstSessionAnnaVerkhova {
 
         int[] numbers1 = {1, 4, 7, 2, 5};
         System.out.println(Arrays.toString(numbers1));
-        int[] numbers2 = numbers1;
-        numbers1[0] = 77;
+        int[] numbers2 = Arrays.copyOf(numbers1, numbers1.length);
+        numbers2[0] = 77;
         System.out.println(Arrays.toString(numbers2));
 
         System.out.println("\n=== Задание 1.4 — String ===");
@@ -111,8 +111,10 @@ public class FirstSessionAnnaVerkhova {
                 break;
             case 5:
                 System.out.println("Пятница");
+                break;
             case 6:
                 System.out.println("Суббота");
+                break;
             case 7:
                 System.out.println("Воскресенье");
                 break;
@@ -155,10 +157,10 @@ public class FirstSessionAnnaVerkhova {
         System.out.println("\n=== Задание 3.3 — Числа в обратном порядке (while) ===");
         // TODO: Используя while, выводи числа от 10 до 1 в обратном порядке
 
-        int value2 = 1;
-        while (value2 <= 10) {
+        int value2 = 10;
+        while (value2 > 0) {
             System.out.println("Число - " + value2);
-            value2++;
+            value2--;
         }
 
         System.out.println("\n=== Задание 3.4 — Ввод числа до >100 (do-while) ===");
