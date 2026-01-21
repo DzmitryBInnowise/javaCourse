@@ -18,9 +18,9 @@ public class SecondSessionAnnaVerkhova {
         useAccount("Иванов", 57000);
         createDog("Rottweiler", "Woof");
         createArraysAnimals("Animal", "Rottweiler", "Woof");
-        sumInt(5, 8);
-        sumDooble(2.5, 5.0);
-        sumIntValue(5, 10, 30);
+        sum(5, 8);
+        sum(2.5, 5.0);
+        sum(5, 10, 30);
         printNumbers(0, 4);
         isEven(10);
         averageArrays(1, 2, 3, 4, 5);
@@ -229,7 +229,7 @@ public class SecondSessionAnnaVerkhova {
     // Создай метод sum(int a, int b)
     // Верни сумму чисел
 
-    public static int sumInt(int a, int b) {
+    public static int sum(int a, int b) {
         int result = a + b;
         System.out.println("Result of sum is: = " + result);
         return result;
@@ -240,13 +240,13 @@ public class SecondSessionAnnaVerkhova {
     // - для double
     // - для трёх int
 
-    public static double sumDooble(double a, double b) {
+    public static double sum(double a, double b) {
         double result = a + b;
         System.out.println("Result of sum is = " + result);
         return result;
     }
 
-    public static int sumIntValue(int a, int b, int c) {
+    public static int sum(int a, int b, int c) {
         int result = a + b + c;
         System.out.println("Result of sum is: = " + result);
         return result;
