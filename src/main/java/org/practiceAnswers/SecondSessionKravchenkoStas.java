@@ -33,6 +33,7 @@ public class SecondSessionKravchenkoStas {
         // TODO
 
         System.out.println("Максимальное значение = " + Arrays.stream(mass1).max().getAsInt());
+        System.out.println("Минимальное значение = " + Arrays.stream(mass1).min().getAsInt());
 
 
         // ЗАДАНИЕ 1.3
@@ -124,7 +125,10 @@ public class SecondSessionKravchenkoStas {
         StringBuilder stringWithNumbers = new StringBuilder();
 
         for(int i = 1; i <= 10; i++){
-            stringWithNumbers.append(i).append(" ");
+            stringWithNumbers.append(i);
+            if(i<10){
+                stringWithNumbers.append(" ");
+            }
         }
 
         System.out.println(stringWithNumbers);
@@ -282,7 +286,7 @@ public class SecondSessionKravchenkoStas {
         for (int i = 0; i< massNumber.length;i++){
             sumNumbers += massNumber[i];
         }
-        System.out.println("Среднее арифм. равно " + (sumNumbers/massNumber.length));
+        System.out.println("Среднее арифм. равно " + (sumNumbers/(double)massNumber.length));
 
         // ЗАДАНИЕ 6.2 ⭐
         // Возьми любую строку как переменную
@@ -458,10 +462,13 @@ class Calculator{
     }
 
     public long factorialRecursive(int n){
+
          if(n == 0){
              return 1;
-         }
-         else {
+         } else if (n<0) {
+             System.out.println("Факториал отрицательного числа не определен");
+             return 0;
+         } else {
              return n * factorialRecursive(n-1);
          }
     }
