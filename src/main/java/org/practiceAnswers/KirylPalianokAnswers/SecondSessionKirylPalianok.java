@@ -473,16 +473,15 @@ class Person {
 	private String name;
 	private int age;
 
-	Person(String name, int age) {
+	public Person(String name, int age) {
 		this.name = name;
 		this.age = age;
 	}
 
-	void printInfo() {
+	public void printInfo() {
 		System.out.println(name);
 		System.out.println(age);
 	}
-
 }
 
 class BankAccount {
@@ -497,16 +496,16 @@ class BankAccount {
 	private String owner;
 	private double balance;
 
-	public BankAccount(String owner, int balance) {
+	public BankAccount(String owner, double balance) {
 		this.owner = owner;
 		this.balance = balance;
 	}
 
-	void deposit(double amount) {
+	public void deposit(double amount) {
 		balance += amount;
 	}
 
-	void withdraw(double amount) {
+	public void withdraw(double amount) {
 		if (amount <= balance) {
 			balance -= amount;
 		} else {
@@ -514,7 +513,7 @@ class BankAccount {
 		}
 	}
 
-	double getBalance() {
+	public double getBalance() {
 		return balance;
 	}
 }
