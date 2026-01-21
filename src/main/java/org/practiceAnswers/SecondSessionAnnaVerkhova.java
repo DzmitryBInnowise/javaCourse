@@ -5,10 +5,10 @@ import java.util.Arrays;
 public class SecondSessionAnnaVerkhova {
     public static void main(String[] args) {
         arrays();
-        findMinArryas();
-        findMaxArryas();
-        findSumArryas();
-        createTwoArryas();
+        findMinArrays();
+        findMaxArrays();
+        findSumArrays();
+        createTwoArrays();
         createNewArrays();
         createString();
         equalsString();
@@ -18,9 +18,9 @@ public class SecondSessionAnnaVerkhova {
         useAccount("Иванов", 57000);
         createDog("Rottweiler", "Woof");
         createArraysAnimals("Animal", "Rottweiler", "Woof");
-        sumAandB(5, 8);
-        sumDoobleAandB(2.5, 5.0);
-        sumAandBandC(5, 10, 30);
+        sumInt(5, 8);
+        sumDooble(2.5, 5.0);
+        sumIntValue(5, 10, 30);
         printNumbers(0, 4);
         isEven(10);
         averageArrays(1, 2, 3, 4, 5);
@@ -41,7 +41,7 @@ public class SecondSessionAnnaVerkhova {
 
     // ЗАДАНИЕ 1.2
     // Найди минимальный и максимальный элемент массива
-    public static void findMinArryas() {
+    public static void findMinArrays() {
         int[] arrays = {3, 54, 88, 70, 101};
         int arraysMin = Arrays.stream(arrays).min().getAsInt();
 
@@ -50,7 +50,7 @@ public class SecondSessionAnnaVerkhova {
         }
     }
 
-    public static void findMaxArryas() {
+    public static void findMaxArrays() {
         int[] arrays = {3, 54, 88, 70, 101};
         int arraysMax = Arrays.stream(arrays).max().getAsInt();
         {
@@ -61,7 +61,7 @@ public class SecondSessionAnnaVerkhova {
 
     // ЗАДАНИЕ 1.3
     // Найди сумму всех элементов массива
-    public static void findSumArryas() {
+    public static void findSumArrays() {
         int[] arrays = {3, 54, 88, 70, 101};
         int sumArrays = Arrays.stream(arrays).sum();
         {
@@ -74,9 +74,9 @@ public class SecondSessionAnnaVerkhova {
     // Измени любой элемент второго массива
     // Выведи оба массива и ОБЪЯСНИ результат
 
-    public static void createTwoArryas() {
+    public static void createTwoArrays() {
         int[] arrays = {3, 54, 88, 70, 101};
-        int[] arrays2 = Arrays.copyOf(arrays, arrays.length);
+        int[] arrays2 = arrays;
         {
             System.out.println(Arrays.toString(arrays2)); // здесь мы получаем ссылку на первый массив
         }
@@ -96,9 +96,7 @@ public class SecondSessionAnnaVerkhova {
     public static void createNewArrays() {
         int[] arraysOriginal = {2, 66, 14, 23, 97};
         int[] arraysCopy = new int[arraysOriginal.length];
-        for (
-                int i = 0;
-                i < arraysOriginal.length; i++) {
+        for (int i = 0; i < arraysOriginal.length; i++) {
             arraysCopy[i] = arraysOriginal[i];
         }
         arraysCopy[1] = 31;
@@ -131,11 +129,11 @@ public class SecondSessionAnnaVerkhova {
 
     public static void equalsString() {
         String str1 = "Java";
-        String str2 = "World"; //new String ("Java")
+        String str2 = "World";
         if (str1 == str2) {
-            System.out.println("Statement  is true");  //тк str1 и str2 находятся в стринг пуле и они ссылаются на тот же объект. Е если делать str2 через new String, тогда значение будет не равно
+            System.out.println("Statement  is true");
         } else {
-            System.out.println("Statement  is false");
+            System.out.println("Statement  is false"); //строки разные, строки находятся в пуле и ссылаютс на разные объекты
         }
         if (str1.equals(str2)) {
             System.out.println("Statement  is true");
@@ -150,7 +148,7 @@ public class SecondSessionAnnaVerkhova {
 
     public static void createStringBuilder() {
         StringBuilder s = new StringBuilder();
-        for (int i = 0; i <= 10; i++) {
+        for (int i = 1; i <= 10; i++) {
             s.append(i);
             if (i < 10) {
                 s.append(" ");
@@ -195,7 +193,7 @@ public class SecondSessionAnnaVerkhova {
     public static void useAccount(String owner, int balance) {
         BankAccount bankAccount = new BankAccount(owner, balance);
         bankAccount.deposit(2500);
-        bankAccount.withdraw(13.500);
+        bankAccount.withdraw(13500);
         bankAccount.getBalance();
     }
 
@@ -231,7 +229,7 @@ public class SecondSessionAnnaVerkhova {
     // Создай метод sum(int a, int b)
     // Верни сумму чисел
 
-    public static int sumAandB(int a, int b) {
+    public static int sumInt(int a, int b) {
         int result = a + b;
         System.out.println("Result of sum is: = " + result);
         return result;
@@ -242,13 +240,13 @@ public class SecondSessionAnnaVerkhova {
     // - для double
     // - для трёх int
 
-    public static double sumDoobleAandB(double a, double b) {
+    public static double sumDooble(double a, double b) {
         double result = a + b;
         System.out.println("Result of sum is = " + result);
         return result;
     }
 
-    public static int sumAandBandC(int a, int b, int c) {
+    public static int sumIntValue(int a, int b, int c) {
         int result = a + b + c;
         System.out.println("Result of sum is: = " + result);
         return result;
@@ -301,93 +299,95 @@ public class SecondSessionAnnaVerkhova {
             System.out.println("This string is not palindrom");
         }
     }
+}
 
-    /* =====================================================
-     * МЕСТО ДЛЯ ТВОИХ КЛАССОВ
-     * =====================================================
-     */
+/* =====================================================
+ * МЕСТО ДЛЯ ТВОИХ КЛАССОВ
+ * =====================================================
+ */
 // class Person { }
-    static class Person {
-        String name;
-        int age;
+class Person {
+    private final String name;
+    private final int age;
 
-        Person(String name, int age) {
-            this.name = name;
-            this.age = age;
-        }
-
-        public String getName() {
-            return name;
-        }
-
-        public int getAge() {
-            return age;
-        }
-
-        void printInfo() {
-            System.out.println("\nThis is " + name + " him " + age + " year.");
-
-        }
+    public Person(String name, int age) {
+        this.name = name;
+        this.age = age;
     }
 
-    // class BankAccount { }
-    static class BankAccount {
-        String owner;
-        double balance;
-
-        BankAccount(String owner, double balance) {
-            this.owner = owner;
-            this.balance = balance;
-        }
-
-        void deposit(double summa) {
-            balance += summa;
-            System.out.println("Баланс увеличен на сумму " + summa);
-        }
-
-        void withdraw(double summa) {
-            if (balance >= summa) {
-                balance -= summa;
-                System.out.println("Со счета снялось " + summa);
-            } else {
-                System.out.println("Не достаточно средств");
-            }
-
-        }
-
-        double getBalance() {
-            return balance;
-        }
+    public String getName() {
+        return name;
     }
 
-    // class Animal { }
-    static class Animal {
-        String name;
-
-        Animal(String name) {
-            this.name = name;
-        }
-
-        void makeSound() {
-            System.out.println(name + " Animal makes sound ");
-        }
+    public int getAge() {
+        return age;
     }
 
-    // class Dog { }
-    static class Dog extends Animal {
-        String voice;
+    public void printInfo() {
+        System.out.println("\nThis is " + name + " him " + age + " year.");
 
-        Dog(String name, String voice) {
-            super(name);
-            this.voice = voice;
-        }
-
-        @Override
-        void makeSound() {
-            System.out.println("Dog " + name + " Say " + voice);
-        }
     }
 }
+
+// class BankAccount { }
+class BankAccount {
+    String owner;
+    double balance;
+
+    BankAccount(String owner, double balance) {
+        this.owner = owner;
+        this.balance = balance;
+    }
+
+    void deposit(double summa) {
+        balance += summa;
+        System.out.println("The balance has been increased by " + summa);
+    }
+
+    void withdraw(double summa) {
+        if (balance >= summa) {
+            balance -= summa;
+            System.out.println("The amount withdrawn from the account " + summa);
+        } else {
+            System.out.println("Not enough funds");
+        }
+
+    }
+
+    double getBalance() {
+        System.out.println("Balance = " + balance);
+        return balance;
+    }
+}
+
+// class Animal { }
+class Animal {
+    String name;
+
+    Animal(String name) {
+        this.name = name;
+    }
+
+    void makeSound() {
+        System.out.println(name + " Animal makes sound ");
+    }
+}
+
+// class Dog { }
+class Dog extends Animal {
+    String voice;
+
+    Dog(String name, String voice) {
+        super(name);
+        this.voice = voice;
+    }
+
+    @Override
+    void makeSound() {
+        System.out.println("Dog " + name + " Say " + voice);
+    }
+}
+
 
 
 
