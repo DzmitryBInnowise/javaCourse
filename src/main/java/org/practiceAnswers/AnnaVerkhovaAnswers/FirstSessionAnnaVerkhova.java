@@ -1,4 +1,4 @@
-package org.practiceAnswers;
+package org.practiceAnswers.AnnaVerkhovaAnswers;
 
 import java.util.Arrays;
 import java.util.Scanner;
