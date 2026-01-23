@@ -358,6 +358,14 @@ class Person {
         return age;
     }
 
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
+    }
+
     public void printInfo() {
         System.out.println("Name: " + name + ", Age: " + age);
     }
@@ -381,6 +389,14 @@ class BankAccount {
 
     public double getBalance() {
         return balance;
+    }
+
+    public void setOwner(String owner) {
+        this.owner = owner;
+    }
+
+    public void setBalance(double balance) {
+        this.balance = balance;
     }
 
     public void deposit(double amount) {
@@ -409,6 +425,14 @@ class Animal {
 
     public  Animal(String name) {
         this.name = name;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName (String name) {
+         this.name = name;
     }
 
     public void makeSound() {
