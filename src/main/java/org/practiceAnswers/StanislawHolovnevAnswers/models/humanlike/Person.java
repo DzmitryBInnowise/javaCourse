@@ -1,4 +1,4 @@
-package org.practiceAnswers.StanislawHolovnevAnswers.models;
+package org.practiceAnswers.StanislawHolovnevAnswers.models.humanlike;
 
 // class Person { }
 // TODO: создать класс Person

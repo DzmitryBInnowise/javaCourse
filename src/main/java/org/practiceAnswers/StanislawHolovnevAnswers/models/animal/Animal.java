@@ -1,7 +1,7 @@
-package org.practiceAnswers.StanislawHolovnevAnswers.models;
+package org.practiceAnswers.StanislawHolovnevAnswers.models.animal;
 
 // class Animal { }
-public class Animal {
+public abstract class Animal {
 
     protected String name;
 
@@ -19,5 +19,11 @@ public class Animal {
 
     public void makeSound() {
         System.out.println(name + ": " + "RRRR?!");
+    }
+
+    public abstract void makeSoundAbstract();
+
+    public void sleep() {
+        System.out.println(name + ": " + "Just sleeping...");
     }
 }

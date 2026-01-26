@@ -1,4 +1,4 @@
-package org.practiceAnswers.StanislawHolovnevAnswers.models;
+package org.practiceAnswers.StanislawHolovnevAnswers.models.values;
 
 // class BankAccount { }
 public class BankAccount {

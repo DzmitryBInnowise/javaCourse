@@ -1,4 +1,4 @@
-package org.practiceAnswers.StanislawHolovnevAnswers;
+package org.practiceAnswers.StanislawHolovnevAnswers.tasks;
 
 import java.util.Scanner;
 
