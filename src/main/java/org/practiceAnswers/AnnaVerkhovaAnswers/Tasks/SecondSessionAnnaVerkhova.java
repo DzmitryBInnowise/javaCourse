@@ -1,4 +1,9 @@
-package org.practiceAnswers.AnnaVerkhovaAnswers.SecondSession;
+package org.practiceAnswers.AnnaVerkhovaAnswers.Tasks;
+
+import org.practiceAnswers.AnnaVerkhovaAnswers.Classes.Animals.Animal;
+import org.practiceAnswers.AnnaVerkhovaAnswers.Classes.Animals.Dog;
+import org.practiceAnswers.AnnaVerkhovaAnswers.Classes.Different.BankAccount;
+import org.practiceAnswers.AnnaVerkhovaAnswers.Classes.People.Person;
 
 import java.util.Arrays;
 
@@ -207,7 +212,12 @@ public class SecondSessionAnnaVerkhova {
     // Переопредели метод makeSound()
     // Создай объект Dog и вызови метод
     public static void createDog(String name, String voice) {
-        Dog dog = new Dog(name, voice);
+        Dog dog = new Dog(name, voice) {
+            @Override
+            public void makeSoundAbstract() {
+
+            }
+        };
         dog.makeSound();
     }
 
@@ -218,8 +228,18 @@ public class SecondSessionAnnaVerkhova {
 
     public static void createArraysAnimals(String nameAnimals, String nameDog, String voice) {
         Animal[] animals = new Animal[2];
-        animals[0] = new Animal(nameAnimals);
-        animals[1] = new Dog(nameDog, voice);
+        animals[0] = new Animal(nameAnimals) {
+            @Override
+            public void makeSoundAbstract() {
+
+            }
+        };
+        animals[1] = new Dog(nameDog, voice) {
+            @Override
+            public void makeSoundAbstract() {
+
+            }
+        };
         for (Animal animal : animals) {
             animal.makeSound();
         }
