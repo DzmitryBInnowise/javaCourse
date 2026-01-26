@@ -1,9 +1,9 @@
-package org.practiceAnswers.AnnaVerkhovaAnswers.SecondSession;
+package org.practiceAnswers.AnnaVerkhovaAnswers.Classes.Animals;
 
-class Dog extends Animal {
+public class Dog extends Animal {
     private String voice;
 
-    Dog(String name, String voice) {
+    public Dog(String name, String voice) {
         super(name);
         this.voice = voice;
     }
@@ -17,7 +17,11 @@ class Dog extends Animal {
     }
 
     @Override
-    void makeSound() {
+    public void makeSound() {
         System.out.println("Dog " + getName() + " Say " + voice);
+    }
+    @Override
+    public void makeSoundAbstract(){
+        System.out.println("Dog " + getName() + " rrrrr ");
     }
 }

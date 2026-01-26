@@ -1,10 +1,10 @@
-package org.practiceAnswers.AnnaVerkhovaAnswers.SecondSession;
+package org.practiceAnswers.AnnaVerkhovaAnswers.Classes.Different;
 
-class BankAccount {
+public class BankAccount {
     private String owner;
     private double balance;
 
-    BankAccount(String owner, double balance) {
+    public BankAccount(String owner, double balance) {
         this.owner = owner;
         this.balance = balance;
     }
@@ -17,12 +17,12 @@ class BankAccount {
         this.owner = owner;
     }
 
-    void deposit(double summa) {
+    public void deposit(double summa) {
         balance += summa;
         System.out.println("The balance has been increased by " + summa);
     }
 
-    void withdraw(double summa) {
+    public void withdraw(double summa) {
         if (balance >= summa) {
             balance -= summa;
             System.out.println("The amount withdrawn from the account " + summa);
@@ -32,7 +32,7 @@ class BankAccount {
 
     }
 
-    double getBalance() {
+    public double getBalance() {
         System.out.println("Balance = " + balance);
         return balance;
     }
