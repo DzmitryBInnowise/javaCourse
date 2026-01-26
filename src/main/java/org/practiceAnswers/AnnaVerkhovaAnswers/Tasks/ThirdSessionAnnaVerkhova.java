@@ -144,12 +144,9 @@ public class ThirdSessionAnnaVerkhova {
      * Создайте объект Dog и вызовите makeSound() и sleep()
      */
 
-    public static void createDogObject(String name, String voice){
-        Dog dog = new Dog(name,voice) {
-            @Override
-            public void makeSoundAbstract() {
-            }
-        };
+    public static void createDogObject(String name, String voice) {
+        Dog dog = new Dog(name, voice);
+        dog.makeSoundAbstract();
         dog.makeSound();
         dog.sleep();
     }
