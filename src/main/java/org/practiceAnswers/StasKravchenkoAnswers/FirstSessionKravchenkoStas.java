@@ -1,4 +1,4 @@
-package org.practiceAnswers;
+package org.practiceAnswers.StasKravchenkoAnswers;
 
 import java.util.Arrays;
 import java.util.Scanner;

@@ -1,7 +1,8 @@
-package org.practiceAnswers;
+package org.practiceAnswers.StasKravchenkoAnswers;
+
+import org.practiceAnswers.StasKravchenkoAnswers.Classes.*;
 
 import java.util.Arrays;
-import java.util.Locale;
 
 public class SecondSessionKravchenkoStas {
 
@@ -195,9 +196,9 @@ public class SecondSessionKravchenkoStas {
 
         // TODO
 
-        Animal cat = new Animal("Cat");
+        //Animal cat = new Animal("Cat");
 
-        cat.makeSound();
+        //cat.makeSound();
 
         // ЗАДАНИЕ 4.2
         // Создай класс Dog, который наследуется от Animal
@@ -219,7 +220,7 @@ public class SecondSessionKravchenkoStas {
 
         Animal[] animals = new Animal[2];
 
-        animals[0] = new Animal("Cat");
+       // animals[0] = new Animal("Cat");
         animals[1] = new Dog("Archie");
 
         for(Animal animal: animals){
@@ -326,151 +327,3 @@ public class SecondSessionKravchenkoStas {
  */
 
 
- class Person {
-     private String name;
-     private int age;
-
-     public Person(String name, int age){
-         this.name = name;
-         this.age = age;
-     }
-
-     public String getName(){
-         return name;
-     }
-
-     public int getAge(){
-         return age;
-     }
-
-    public void printInfo(){
-         System.out.println("Имя:" + name);
-        System.out.println("Возраст:" + age);
-    }
-
- }
-
- class BankAccount {
-     private String owner;
-     private double balance;
-
-     public BankAccount(String owner, double initialBalance){
-         this.owner = owner;
-         this.balance = initialBalance;
-     }
-
-     public void deposit(double amount) {
-         if (amount > 0) {
-             balance += amount;
-             System.out.println("Пополнение счета " + owner + ": + " + amount + ". Новый баланс: " + balance);
-         } else {
-             System.out.println("Некорректная сумма для пополнения счета.");
-         }
-     }
-
-     public void withdraw(double amount) {
-         if (amount > 0 && balance >= amount) {
-             balance -= amount;
-             System.out.println("Снятие со счета " + owner + ": - " + amount + ". Новый баланс: " + balance);
-         } else if (amount <= 0) {
-             System.out.println("Некорректная сумма для снятия.");
-         } else {
-             System.out.println("Недостаточно средств на счете.");
-         }
-     }
-
-     public String getOwner() {
-         return owner;
-     }
-
-     public double getBalance() {
-         return balance;
-     }
- }
-
- class Animal {
-     private String name;
-
-     public Animal(String name){
-         this.name = name;
-     }
-
-     public void makeSound(){
-         System.out.println("Animal sound");
-     }
-
-     public String getName() {
-         return name;
-     }
-
- }
-
- class Dog extends Animal {
-
-     public Dog(String name){
-         super(name);
-     }
-
-     @Override
-     public void makeSound() {
-         System.out.println("Dog " + getName() + " barks");
-     }
-
-     @Override
-     public String getName() {
-         return super.getName();
-     }
- }
-
-class Calculator{
-     int sum(int a, int b){
-         return a+b;
-     }
-     double sum (double a, double b){
-         return  a+b;
-     }
-     int sum (int a ,int b, int c){
-         return a+b+c;
-     }
-
-     public void printNumbers(int from, int to){
-         if(from > to){
-             System.out.println("Начальное значение должно быть меньше или равно конечному");
-             return;
-         }
-         for(int i = from; i <= to; i++){
-             System.out.println(i);
-         }
-    }
-
-    public boolean isEven(int number){
-         return number % 2 ==0;
-    }
-
-    public void factorial(int n){
-        if (n < 0) {
-            System.out.println("Факториал отрицательного числа не определен");
-            return;
-        }
-        long factorial = 1;
-
-        for(int i = 1; i<=n;i++){
-            factorial *= i;
-
-        }
-        System.out.println("Факториал равен " + factorial);
-    }
-
-    public long factorialRecursive(int n){
-
-         if(n == 0){
-             return 1;
-         } else if (n<0) {
-             System.out.println("Факториал отрицательного числа не определен");
-             return 0;
-         } else {
-             return n * factorialRecursive(n-1);
-         }
-    }
-
-}
