@@ -1,6 +1,6 @@
-package org.practiceAnswers.KirylPalianokAnswers.thirdSession.model;
+package org.practiceAnswers.KirylPalianokAnswers.thirdSession.model.human;
 
-public class Child extends Parent{
+public class Child extends Parent {
 
 	public Child(int value) {
 		super(value);

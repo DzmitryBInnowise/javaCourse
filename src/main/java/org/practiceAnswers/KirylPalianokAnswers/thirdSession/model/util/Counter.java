@@ -1,4 +1,4 @@
-package org.practiceAnswers.KirylPalianokAnswers.thirdSession.model;
+package org.practiceAnswers.KirylPalianokAnswers.thirdSession.model.util;
 
 public class Counter {
 

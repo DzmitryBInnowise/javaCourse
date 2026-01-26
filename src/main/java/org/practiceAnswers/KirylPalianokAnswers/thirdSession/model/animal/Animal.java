@@ -1,4 +1,4 @@
-package org.practiceAnswers.KirylPalianokAnswers.thirdSession.model;
+package org.practiceAnswers.KirylPalianokAnswers.thirdSession.model.animal;
 
 public abstract class Animal {
 

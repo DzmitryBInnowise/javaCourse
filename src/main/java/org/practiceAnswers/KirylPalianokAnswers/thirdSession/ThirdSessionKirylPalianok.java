@@ -1,12 +1,12 @@
 package org.practiceAnswers.KirylPalianokAnswers.thirdSession;
 
 import org.practiceAnswers.KirylPalianokAnswers.secondSession.model.Person;
-import org.practiceAnswers.KirylPalianokAnswers.thirdSession.model.Bird;
-import org.practiceAnswers.KirylPalianokAnswers.thirdSession.model.Child;
-import org.practiceAnswers.KirylPalianokAnswers.thirdSession.model.Counter;
-import org.practiceAnswers.KirylPalianokAnswers.thirdSession.model.Dog;
-import org.practiceAnswers.KirylPalianokAnswers.thirdSession.model.ElectricCar;
-import org.practiceAnswers.KirylPalianokAnswers.thirdSession.model.Example;
+import org.practiceAnswers.KirylPalianokAnswers.thirdSession.model.animal.Bird;
+import org.practiceAnswers.KirylPalianokAnswers.thirdSession.model.human.Child;
+import org.practiceAnswers.KirylPalianokAnswers.thirdSession.model.util.Counter;
+import org.practiceAnswers.KirylPalianokAnswers.thirdSession.model.animal.Dog;
+import org.practiceAnswers.KirylPalianokAnswers.thirdSession.model.vehicle.ElectricCar;
+import org.practiceAnswers.KirylPalianokAnswers.thirdSession.model.example.Example;
 
 public class ThirdSessionKirylPalianok {
 

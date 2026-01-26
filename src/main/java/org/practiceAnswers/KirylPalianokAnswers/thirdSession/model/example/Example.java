@@ -1,4 +1,4 @@
-package org.practiceAnswers.KirylPalianokAnswers.thirdSession.model;
+package org.practiceAnswers.KirylPalianokAnswers.thirdSession.model.example;
 
 public class Example {
 
