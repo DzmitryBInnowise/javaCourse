@@ -1,4 +1,9 @@
-package org.practiceAnswers.KirylPalianokAnswers;
+package org.practiceAnswers.KirylPalianokAnswers.secondSession;
+
+import org.practiceAnswers.KirylPalianokAnswers.secondSession.model.Animal;
+import org.practiceAnswers.KirylPalianokAnswers.secondSession.model.BankAccount;
+import org.practiceAnswers.KirylPalianokAnswers.secondSession.model.Dog;
+import org.practiceAnswers.KirylPalianokAnswers.secondSession.model.Person;
 
 import java.util.Arrays;
 
@@ -66,7 +71,7 @@ public class SecondSessionKirylPalianok {
 		 */
 
 		// ЗАДАНИЕ 4.2
-		Dog dog = new Dog();
+		Dog dog = new Dog("Albert");
 		dog.makeSound();
 
 		// ЗАДАНИЕ 4.3
@@ -456,98 +461,4 @@ public class SecondSessionKirylPalianok {
 	}
 }
 
-/* =====================================================
- * 3️⃣ КЛАСС И ОБЪЕКТ
- * =====================================================
- */
-
-class Person {
-
-	// ЗАДАНИЕ 3.1
-	// Создай класс Person (ниже):
-	// - имя
-	// - возраст
-	// - метод printInfo()
-	// Создай объект и вызови метод
-
-	private String name;
-	private int age;
-
-	public Person(String name, int age) {
-		this.name = name;
-		this.age = age;
-	}
-
-	public void printInfo() {
-		System.out.println(name);
-		System.out.println(age);
-	}
-}
-
-class BankAccount {
-
-	// ЗАДАНИЕ 3.2
-	// Создай класс BankAccount:
-	// - owner
-	// - balance
-	// - методы deposit(), withdraw()
-	// Проверь изменение состояния объекта
-
-	private String owner;
-	private double balance;
-
-	public BankAccount(String owner, double balance) {
-		this.owner = owner;
-		this.balance = balance;
-	}
-
-	public void deposit(double amount) {
-		balance += amount;
-	}
-
-	public void withdraw(double amount) {
-		if (amount <= balance) {
-			balance -= amount;
-		} else {
-			System.out.println("Недостаточно средств.");
-		}
-	}
-
-	public double getBalance() {
-		return balance;
-	}
-}
-
-/* =====================================================
- * 4️⃣ НАСЛЕДОВАНИЕ
- * =====================================================
- */
-
-class Animal {
-
-	// ЗАДАНИЕ 4.1
-	// Создай класс Animal:
-	// - name
-	// - метод makeSound()
-
-	private String name;
-
-	public void makeSound() {
-
-		System.out.println("Roar");
-	}
-}
-
-class Dog extends Animal {
-
-	// ЗАДАНИЕ 4.2
-	// Создай класс Dog, который наследуется от Animal
-	// Переопредели метод makeSound()
-	// Создай объект Dog и вызови метод
-
-	@Override
-	public void makeSound() {
-		System.out.println("Woof");
-	}
-}
 

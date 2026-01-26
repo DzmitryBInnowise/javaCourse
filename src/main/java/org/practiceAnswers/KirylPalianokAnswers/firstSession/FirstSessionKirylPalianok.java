@@ -1,4 +1,4 @@
-package org.practiceAnswers.KirylPalianokAnswers;
+package org.practiceAnswers.KirylPalianokAnswers.firstSession;
 
 import java.util.Arrays;
 import java.util.Scanner;
