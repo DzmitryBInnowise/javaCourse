@@ -1,9 +1,9 @@
-package org.practiceAnswers.StanislawHolovnevAnswers;
+package org.practiceAnswers.StanislawHolovnevAnswers.tasks;
 
-import org.practiceAnswers.StanislawHolovnevAnswers.models.Animal;
-import org.practiceAnswers.StanislawHolovnevAnswers.models.BankAccount;
-import org.practiceAnswers.StanislawHolovnevAnswers.models.Dog;
-import org.practiceAnswers.StanislawHolovnevAnswers.models.Person;
+import org.practiceAnswers.StanislawHolovnevAnswers.models.animal.Animal;
+import org.practiceAnswers.StanislawHolovnevAnswers.models.values.BankAccount;
+import org.practiceAnswers.StanislawHolovnevAnswers.models.animal.Dog;
+import org.practiceAnswers.StanislawHolovnevAnswers.models.humanlike.Person;
 
 import java.util.Scanner;
 
@@ -180,7 +180,12 @@ public class SecondSessionStanislawHolovnev {
     }
 
     public static void useDogSound(String dogName) {
-        Dog dog = new Dog(dogName);
+        Dog dog = new Dog(dogName) {
+            @Override
+            public void makeSoundAbstract() {
+
+            }
+        };
         dog.makeSound();
     }
 
@@ -240,8 +245,18 @@ public class SecondSessionStanislawHolovnev {
     public static void useArrayOfAnimals(String animalName, String dogName) {
         // TODO: создай массив типа Animal
         Animal[] animals = new Animal[2];
-        animals[0] = new Animal(animalName);
-        animals[1] = new Dog(dogName);
+        animals[0] = new Animal(animalName) {
+            @Override
+            public void makeSoundAbstract() {
+
+            }
+        };
+        animals[1] = new Dog(dogName) {
+            @Override
+            public void makeSoundAbstract() {
+
+            }
+        };
 
         for (Animal animal : animals) {
             animal.makeSound();

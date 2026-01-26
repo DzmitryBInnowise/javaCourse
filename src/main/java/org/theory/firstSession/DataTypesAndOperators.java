@@ -157,12 +157,12 @@ public class DataTypesAndOperators {
          * --- Логические операторы ---
          */
 
-        int x = 10;
+        int x1 = 10;
         int y = 5;
 
-        boolean result1 = x > y & x > 0; // И (AND)
-        boolean result2 = x < y | y == 5; // ИЛИ (OR)
-        boolean result3 = !(x == y); // НЕ (NOT)
+        boolean result1 = x1 > y & x1 > 0; // И (AND)
+        boolean result2 = x1 < y | y == 5; // ИЛИ (OR)
+        boolean result3 = !(x1 == y); // НЕ (NOT)
 
         System.out.println(result1);
         System.out.println(result2);

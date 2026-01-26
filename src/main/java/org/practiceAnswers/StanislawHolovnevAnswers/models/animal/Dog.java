@@ -1,6 +1,6 @@
-package org.practiceAnswers.StanislawHolovnevAnswers.models;
+package org.practiceAnswers.StanislawHolovnevAnswers.models.animal;
 
-public class Dog extends Animal {
+public abstract class Dog extends Animal {
 
     public Dog(String name) {
         super(name);
