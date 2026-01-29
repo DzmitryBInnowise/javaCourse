@@ -1,10 +1,13 @@
 package org.practiceAnswers.AnnaVerkhovaAnswers.Classes.People;
 
+import java.io.Serializable;
 import java.util.Objects;
 
-public class Person {
+public class Person implements Serializable {
     private String name;
     private int age;
+    private static final long serialVersionUID = 1L;
+    transient String password;
 
     public Person(String name, int age) {
         this.name = name;
@@ -42,5 +45,18 @@ public class Person {
     public void printInfo() {
         System.out.println("\nThis is " + name + " him " + age + " year.");
 
+    }
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public Person(String name, int age, String password) {
+        this.name = name;
+        this.age = age;
+        this.password = password;
     }
 }
