@@ -1,7 +1,5 @@
 package org.practiceAnswers.StanislawHolovnevAnswers.tasks;
 
-
-import org.practiceAnswers.StanislawHolovnevAnswers.models.*;
 import org.practiceAnswers.StanislawHolovnevAnswers.models.animal.Bird;
 import org.practiceAnswers.StanislawHolovnevAnswers.models.animal.Dog;
 import org.practiceAnswers.StanislawHolovnevAnswers.models.humanlike.Child;
@@ -38,8 +36,8 @@ public class ThirdSessionStanislawHolovnev {
      */
 
     public static boolean usePersonClass(String name, int age) {
-        Person personOne = new Person(name, age);
-        Person personTwo = new Person(name, age);
+        Person personOne = new Person(name, age, "password");
+        Person personTwo = new Person(name, age, "password");
         System.out.println("personOne equals personTwo: " + personOne.equals(personTwo));
         System.out.println("personOne hashCode: " + personOne.hashCode());
         System.out.println("personTwo hashCode: " + personTwo.hashCode());

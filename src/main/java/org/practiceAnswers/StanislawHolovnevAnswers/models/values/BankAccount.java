@@ -1,6 +1,11 @@
 package org.practiceAnswers.StanislawHolovnevAnswers.models.values;
 
+import lombok.Getter;
+import lombok.Setter;
+
 // class BankAccount { }
+@Getter
+@Setter
 public class BankAccount {
 
     private String owner;
@@ -11,21 +16,6 @@ public class BankAccount {
         this.balance = balance;
     }
 
-    public String getOwner() {
-        return owner;
-    }
-
-    public double getBalance() {
-        return balance;
-    }
-
-    public void setOwner(String owner) {
-        this.owner = owner;
-    }
-
-    public void setBalance(double balance) {
-        this.balance = balance;
-    }
 
     public void deposit(double amount) {
         if (amount > 0) {

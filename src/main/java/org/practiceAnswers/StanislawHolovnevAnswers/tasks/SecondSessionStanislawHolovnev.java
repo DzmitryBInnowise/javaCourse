@@ -175,7 +175,7 @@ public class SecondSessionStanislawHolovnev {
     }
 
     public static void usePersonInformation(String name, int age) {
-        Person person = new Person(name, age);
+        Person person = new Person(name, age, "password");
         person.printInfo();
     }
 
