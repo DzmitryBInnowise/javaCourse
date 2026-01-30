@@ -13,8 +13,7 @@ public class ExсeptionTask {
 		try {
 			return a/b;
 		} catch (ArithmeticException e) {
-			System.out.println("Ошибка: Деление на ноль." + e.getMessage());
-			return 0;
+			throw new IllegalArgumentException("Нельзя делить на ноль", e);
 		} finally {
 			System.out.println("Операция завершена.");
 		}
