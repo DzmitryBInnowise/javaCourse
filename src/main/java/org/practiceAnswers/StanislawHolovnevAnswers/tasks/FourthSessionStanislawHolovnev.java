@@ -1,5 +1,7 @@
 package org.practiceAnswers.StanislawHolovnevAnswers.tasks;
 
+import org.practiceAnswers.StanislawHolovnevAnswers.helpers.DeserializationHelper;
+import org.practiceAnswers.StanislawHolovnevAnswers.helpers.SerializationHelper;
 import org.practiceAnswers.StanislawHolovnevAnswers.models.generics.Box;
 import org.practiceAnswers.StanislawHolovnevAnswers.models.humanlike.Person;
 import org.practiceAnswers.StanislawHolovnevAnswers.models.humanlike.Student;
@@ -12,11 +14,12 @@ import java.io.IOException;
 import java.util.*;
 
 import static org.practiceAnswers.StanislawHolovnevAnswers.helpers.CollectionHelpers.printNumbers;
-import static org.practiceAnswers.StanislawHolovnevAnswers.models.humanlike.Person.serialize;
+import static org.practiceAnswers.StanislawHolovnevAnswers.helpers.SerializationHelper.serializeObject;
 
 public class FourthSessionStanislawHolovnev {
 
-    private static String folderPath = "src/main/java/org/practiceAnswers/StanislawHolovnevAnswers/dto";
+    static String folderPath = "src/main/java/org/practiceAnswers/StanislawHolovnevAnswers/dto/person.dat";
+    static String SecondFolderPath = "src/main/java/org/practiceAnswers/StanislawHolovnevAnswers/dto/listOfNumbers.txt";
 
 
     /*
@@ -31,9 +34,11 @@ public class FourthSessionStanislawHolovnev {
     public static void main(String[] args) throws IOException, ClassNotFoundException {
         divide(10, 0);
         checkAge(18);
-        //readFile("src/main/java/org/practiceAnswers/StanislawHolovnevAnswers/dto/somefiles.txt");
-        System.out.println(firstLineReader("src/main/java/org/practiceAnswers/StanislawHolovnevAnswers/dto/somefile.txt"));
-        useList("Java", "Python", "C#", "JavaScript", "Ruby", "Java");
+        readFile("src/main/java/org/practiceAnswers/StanislawHolovnevAnswers/dto/somefile.txt");
+        System.out.println(firstLineReader("src/main/java/org/practiceAnswers/StanislawHolovnevAnswers/dto/" +
+                "somefile.txt"));
+        useList("Java", "Python", "C#", "JavaScript", "Ruby",
+                "Java");
         useSet(1);
         useMap("Stas", "Vlad", "Nicole", 27, 23, 25);
         findStudentWithMaxGrade("Stas", "Vlad", "Nicole", 10, 5, 9);
@@ -95,9 +100,9 @@ public class FourthSessionStanislawHolovnev {
      */
 
     public static String readFile(String path) throws IOException {
-        BufferedReader reader = new BufferedReader(new FileReader(path));
-        return reader.readLine();
-        //Уточнить
+        try (BufferedReader reader = new BufferedReader(new FileReader(path))) {
+            return reader.readLine();
+        }
     }
 
     // ================================
@@ -211,7 +216,7 @@ public class FourthSessionStanislawHolovnev {
 
     public static void useSerialization(String name, int age, String password) throws IOException {
         Person person = new Person(name, age, password);
-        serialize(person, folderPath);
+        serializeObject(person, folderPath);
     }
 
     // ================================
@@ -224,8 +229,7 @@ public class FourthSessionStanislawHolovnev {
      */
 
     public static void useDeserialization() throws IOException, ClassNotFoundException {
-        Person person = Person.deserialize(folderPath);
-        System.out.println(person);
+        DeserializationHelper.deserialize(folderPath);
         System.out.println("Ключевое слово transient игнорирует поле password, так как при записи объекта" +
                 "в байты transient игнорирует поле password");
     }
@@ -319,8 +323,7 @@ public class FourthSessionStanislawHolovnev {
      */
 
     public static <T> void copy(List<? super T> dest, List<? extends T> src) {
-        dest.addAll(src);
-        System.out.println("Copied elements: " + dest);
+        CollectionHelpers.copy(dest, src);
     }
 
     // ================================
@@ -336,7 +339,7 @@ public class FourthSessionStanislawHolovnev {
      */
 
     public static void useFileReader() throws IOException {
-        List<Integer> numbers = CollectionHelpers.readNCopy(folderPath + "/listOfNumbers.txt");
+        List<Integer> numbers = CollectionHelpers.readNCopy(SecondFolderPath);
         System.out.println("Max number is: " + numbers.stream().max(Integer::compare).orElse(null));
     }
 }
