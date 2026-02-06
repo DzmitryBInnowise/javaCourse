@@ -12,14 +12,14 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.*;
 
-import static org.practiceAnswers.StanislawHolovnevAnswers.helpers.FileHelper.deserialize;
-import static org.practiceAnswers.StanislawHolovnevAnswers.helpers.FileHelper.serialize;
+import static org.practiceAnswers.StanislawHolovnevAnswers.helpers.SerializationHelper.deserialize;
+import static org.practiceAnswers.StanislawHolovnevAnswers.helpers.SerializationHelper.serialize;
 
 public class FourthSessionStanislawHolovnev {
 
-    static String folderPath = "src/main/java/org/practiceAnswers/StanislawHolovnevAnswers/dto/person.dat";
-    static String serPath = "src/main/java/org/practiceAnswers/StanislawHolovnevAnswers/dto/numbers.ser";
-    static String secondFolderPath = "src/main/java/org/practiceAnswers/StanislawHolovnevAnswers/dto/listOfNumbers.txt";
+    static String folderPath = "src/main/resources/storage/person.dat";
+    static String serPath = "src/main/resources/storage/numbers.ser";
+    static String secondFolderPath = "src/main/resources/storage/listOfNumbers.txt";
 
 
     /*
@@ -34,9 +34,8 @@ public class FourthSessionStanislawHolovnev {
     public static void main(String[] args) throws IOException, ClassNotFoundException {
         divide(10, 0);
         checkAge(18);
-        readFile("src/main/java/org/practiceAnswers/StanislawHolovnevAnswers/dto/somefile.txt");
-        System.out.println(firstLineReader("src/main/java/org/practiceAnswers/StanislawHolovnevAnswers/dto/" +
-                "somefile.txt"));
+        readFile("src/main/resources/storage/somefile.txt");
+        System.out.println(firstLineReader("src/main/resources/storage/somefile.txt"));
         useList("Java", "Python", "C#", "JavaScript", "Ruby",
                 "Java");
         useSet(1);
