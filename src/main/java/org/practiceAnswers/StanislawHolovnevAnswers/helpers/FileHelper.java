@@ -8,26 +8,6 @@ import java.util.List;
 
 public class FileHelper {
 
-    public static boolean serialize(Object obj, String path) {
-        try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(path))) {
-            oos.writeObject(obj);
-            return true;
-        } catch (IOException e) {
-            System.err.println("Ошибка записи: " + e.getMessage());
-            return false;
-        }
-    }
-
-
-    public static Object deserialize(String path) {
-        try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream(path))) {
-            return ois.readObject();
-        } catch (IOException | ClassNotFoundException e) {
-            System.err.println("Ошибка чтения: " + e.getMessage());
-            return null;
-        }
-    }
-
     public static List<Integer> readFile(String path) throws IOException {
         List<Integer> numbers = new ArrayList<>();
 
