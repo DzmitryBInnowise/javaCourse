@@ -1,7 +1,6 @@
 package org.practiceAnswers.StanislawHolovnevAnswers.tasks;
 
-import org.practiceAnswers.StanislawHolovnevAnswers.helpers.DeserializationHelper;
-import org.practiceAnswers.StanislawHolovnevAnswers.helpers.SerializationHelper;
+import org.practiceAnswers.StanislawHolovnevAnswers.helpers.FileHelper;
 import org.practiceAnswers.StanislawHolovnevAnswers.models.generics.Box;
 import org.practiceAnswers.StanislawHolovnevAnswers.models.humanlike.Person;
 import org.practiceAnswers.StanislawHolovnevAnswers.models.humanlike.Student;
@@ -13,13 +12,14 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.*;
 
-import static org.practiceAnswers.StanislawHolovnevAnswers.helpers.CollectionHelpers.printNumbers;
-import static org.practiceAnswers.StanislawHolovnevAnswers.helpers.SerializationHelper.serializeObject;
+import static org.practiceAnswers.StanislawHolovnevAnswers.helpers.FileHelper.deserialize;
+import static org.practiceAnswers.StanislawHolovnevAnswers.helpers.FileHelper.serialize;
 
 public class FourthSessionStanislawHolovnev {
 
     static String folderPath = "src/main/java/org/practiceAnswers/StanislawHolovnevAnswers/dto/person.dat";
-    static String SecondFolderPath = "src/main/java/org/practiceAnswers/StanislawHolovnevAnswers/dto/listOfNumbers.txt";
+    static String serPath = "src/main/java/org/practiceAnswers/StanislawHolovnevAnswers/dto/numbers.ser";
+    static String secondFolderPath = "src/main/java/org/practiceAnswers/StanislawHolovnevAnswers/dto/listOfNumbers.txt";
 
 
     /*
@@ -132,17 +132,25 @@ public class FourthSessionStanislawHolovnev {
      * Проверь, содержит ли список строку "Java"
      */
 
-    public static void useList(String elementOne, String elementTwo, String elementThree,
-                               String elementFour, String elementFive, String elementToRemove) {
-        List<String> listOfElements = new ArrayList<>(5);
-        listOfElements.add(elementOne);
-        listOfElements.add(elementTwo);
-        listOfElements.add(elementThree);
-        listOfElements.add(elementFour);
-        listOfElements.add(elementFive);
-        listOfElements.remove(elementToRemove);
-        System.out.println(listOfElements.size());
-        System.out.println(listOfElements.contains("Java"));
+    public static void useList(String e1, String e2, String e3, String e4, String e5, String toRemove) {
+        List<String> list = new ArrayList<>();
+        list.add(e1);
+        list.add(e2);
+        list.add(e3);
+        list.add(e4);
+        list.add(e5);
+
+        if (list.remove(toRemove)) {
+            System.out.println("Удалено: " + toRemove);
+        } else {
+            System.out.println("Не удалось удалить (не найден): " + toRemove);
+        }
+
+        if (list.contains("Java")) {
+            System.out.println("Результат: Java есть в списке");
+        } else {
+            System.out.println("Результат: Java в списке нет");
+        }
     }
 
     // ================================
@@ -161,8 +169,12 @@ public class FourthSessionStanislawHolovnev {
         setOfNumbers.add(num);
         setOfNumbers.add(num);
         setOfNumbers.add(num);
-        System.out.println(setOfNumbers);
 
+        if (setOfNumbers.size() == 1) {
+            System.out.println("Дубликаты не созданы. В сете только один элемент: " + setOfNumbers);
+        } else {
+            System.out.println("Что-то пошло не так, элементов больше одного: " + setOfNumbers.size());
+        }
     }
 
     // ================================
@@ -200,9 +212,15 @@ public class FourthSessionStanislawHolovnev {
         students.add(new Student(nameOne, gradeOne));
         students.add(new Student(nameTwo, gradeTwo));
         students.add(new Student(nameThree, gradeThree));
-        Student maxGradeStudent = students.stream().max(Comparator.comparing(Student::getGrade)).orElse(null);
-        System.out.println(maxGradeStudent);
 
+        Student maxGradeStudent = students.get(0);
+
+        for (Student s : students) {
+            if (s.getGrade() > maxGradeStudent.getGrade()) {
+                maxGradeStudent = s;
+            }
+        }
+        System.out.println("Студент с макс. баллом: " + maxGradeStudent);
     }
 
     // ================================
@@ -214,9 +232,9 @@ public class FourthSessionStanislawHolovnev {
      * Сериализуй объект в файл "person.dat"
      */
 
-    public static void useSerialization(String name, int age, String password) throws IOException {
+    public static void useSerialization(String name, int age, String password) {
         Person person = new Person(name, age, password);
-        serializeObject(person, folderPath);
+        serialize(person, folderPath);
     }
 
     // ================================
@@ -228,8 +246,10 @@ public class FourthSessionStanislawHolovnev {
      * Объясни, почему password = null
      */
 
-    public static void useDeserialization() throws IOException, ClassNotFoundException {
-        DeserializationHelper.deserialize(folderPath);
+    public static void useDeserialization() {
+        serialize(new Person("Stas", 27, "password"), folderPath);
+        Person person = (Person) deserialize(folderPath);
+        System.out.println(person);
         System.out.println("Ключевое слово transient игнорирует поле password, так как при записи объекта" +
                 "в байты transient игнорирует поле password");
     }
@@ -323,7 +343,7 @@ public class FourthSessionStanislawHolovnev {
      */
 
     public static <T> void copy(List<? super T> dest, List<? extends T> src) {
-        CollectionHelpers.copy(dest, src);
+        FileHelper.copy(dest, src);
     }
 
     // ================================
@@ -339,8 +359,25 @@ public class FourthSessionStanislawHolovnev {
      */
 
     public static void useFileReader() throws IOException {
-        List<Integer> numbers = CollectionHelpers.readNCopy(SecondFolderPath);
-        System.out.println("Max number is: " + numbers.stream().max(Integer::compare).orElse(null));
+        List<Integer> numbers = FileHelper.readFile(secondFolderPath);
+
+        serialize(numbers, serPath);
+
+        Object restoredData = deserialize(serPath);
+
+        if (restoredData instanceof List) {
+            List<Integer> restoredNumbers = (List<Integer>) restoredData;
+
+            if (!restoredNumbers.isEmpty()) {
+                int max = restoredNumbers.get(0);
+                for (int n : restoredNumbers) {
+                    if (n > max) max = n;
+                }
+                System.out.println("Максимальное число после десериализации: " + max);
+            }
+        } else {
+            System.err.println("Ошибка: десериализованный объект не является списком!");
+        }
     }
 }
 

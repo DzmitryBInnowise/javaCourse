@@ -25,32 +25,4 @@ public class CollectionHelpers {
         }
     }
 
-    public static List<Integer> readNCopy(String path) throws IOException {
-        List<Integer> numbers = new ArrayList<>();
-
-        try (BufferedReader reader = new BufferedReader(new FileReader(path))) {
-            String line;
-            while ((line = reader.readLine()) != null) {
-                String[] tokens = line.split(",");
-
-                for (String token : tokens) {
-                    String trimmed = token.trim();
-                    if (!trimmed.isEmpty()) {
-                        numbers.add(Integer.parseInt(trimmed));
-                    }
-                }
-            }
-        }
-        return numbers;
-    }
-
-    public static <T> void copy(List<? super T> dest, List<? extends T> src) {
-        if (src == null || dest == null) {
-            return;
-        }
-        for (T element : src) {
-            dest.add(element);
-        }
-        System.out.println("Элементы скопированы : " + dest);
-    }
 }
