@@ -1,12 +1,7 @@
 package org.practiceAnswers.KirylPalianokAnswers.fourthSession;
 
-import java.io.BufferedOutputStream;
-import java.io.FileOutputStream;
 import java.io.IOException;
-import java.io.ObjectOutputStream;
-import java.io.OutputStreamWriter;
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -88,7 +83,11 @@ public class FourthSessionKirylPalianok {
 
 		System.out.println(programmingLanguages.size());
 
-		System.out.println(programmingLanguages.contains("Java"));;
+		if (programmingLanguages.contains("Java")) {
+			System.out.println("Содержит Java");
+		} else {
+			System.out.println("Не содержит Java");
+		}
 
 		// ================================
 		// ЗАДАНИЕ 13.2 — Set
@@ -100,6 +99,7 @@ public class FourthSessionKirylPalianok {
 		 */
 
 		Set<Integer> numbers = new HashSet<>();
+		int count = 0;
 
 		numbers.add(1);
 		numbers.add(1);
@@ -108,7 +108,17 @@ public class FourthSessionKirylPalianok {
 		numbers.add(4);
 		numbers.add(5);
 
-		System.out.println(numbers);
+		for (Integer number : numbers) {
+			if (number == 1) {
+				count++;
+			}
+		}
+
+		if (count > 1) {
+			System.out.println("Ошибка. В Set не может быть дубликатов");
+		} else {
+			System.out.println("Дубликаты не добавлены");
+		}
 
 		// ================================
 		// ЗАДАНИЕ 13.3 — Map
