@@ -106,7 +106,7 @@ public class ForthSessionKravchenkoStas {
         numbers.add(5);
         numbers.add(5);
 
-        System.out.println(numbers);
+        System.out.println(numbers.size());
 
         // ================================
         // ЗАДАНИЕ 13.3 — Map
