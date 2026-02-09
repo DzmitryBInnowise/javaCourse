@@ -39,16 +39,19 @@ public class ThirdSessionAlisaPauliuchenkava {
      * Убедитесь, что equals() и hashCode() возвращают true при сравнении объектов
      */
 
-    public static boolean checkTrue(String name, int age) {
+    public static void checkTrue(String name, int age) {
         Person person1 = new Person(name, age);
         Person person2 = new Person(name, age);
-        boolean areEqual = person1.equals(person2);
-        boolean sameHashCode = person1.hashCode() == person2.hashCode();
-        System.out.println("объекты равны по equals(): " + areEqual);
-        System.out.println("хеш коды одинаковы: " + sameHashCode);
-        System.out.println("хеш код 1: " + person1.hashCode());
-        System.out.println("хеш код 2: " + person2.hashCode());
-        return areEqual && sameHashCode;
+        if (person1.equals(person2)) {
+            System.out.println("результат equals - true");
+        } else {
+            System.out.println("результат equals - false");
+        }
+        if (person1.hashCode() == person2.hashCode()) {
+            System.out.println("результат hashCode - true");
+        } else {
+            System.out.println("результат hashCode - false");
+        }
     }
 
     // Задание 8.2 — Сравнение объектов
