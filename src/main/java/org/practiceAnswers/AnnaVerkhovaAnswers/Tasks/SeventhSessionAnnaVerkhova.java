@@ -42,13 +42,13 @@ public class SeventhSessionAnnaVerkhova {
     // Если s == null или пустая строка — вернуть Optional.empty().
 
     public static Optional<String> getOptionalString(String s) {
-        Optional<String> optionalS = Optional.of(s);
+        Optional<String> optionalS = Optional.ofNullable(s);
         if (s == null || s.isEmpty()) {
             System.out.println("String = " + "Optional.empty");
             return Optional.empty();
         }
         System.out.println("String = " + optionalS.get());
-        return Optional.of(s);
+        return Optional.ofNullable(s);
     }
     // TODO 2:
     // Создай Optional<Integer>.
