@@ -71,13 +71,10 @@ public class FourthSessionAnnaVerkhova {
     // TODO: вызвать метод checkAge()
 
     public static void checkAge(int age) {
-        try {
-            if (age < 18)
-                throw new IllegalArgumentException();
-            System.out.println("Age is right");
-        } catch (IllegalArgumentException e) {
-            System.out.println("Age under 18 years");
+        if (age < 18) {
+            throw new IllegalArgumentException("Age is " + age + ", but must be at least 18.");
         }
+        System.out.println("Age is right.");
     }
 
     // ================================
@@ -134,17 +131,15 @@ public class FourthSessionAnnaVerkhova {
 // TODO
 
     public static void createArrayList() {
-        ArrayList<String> list = new ArrayList<>();
+        List<String> list = new ArrayList<>();
         list.add("Java");
         list.add("Animal");
         list.add("Cat");
         list.add("Dog");
         list.add("Elephant");
-        list.size();
         System.out.println(list);
         System.out.println("There are " + list.size() + " elements in list");
         list.remove("Animal");
-        list.size();
         System.out.println("There are " + list.size() + " elements in list");
         if (list.contains("Java")) {
             System.out.println("There is Java in list");
@@ -163,13 +158,23 @@ public class FourthSessionAnnaVerkhova {
      */
 
     public static void createSet() {
+        int count = 0;
         Set<Integer> set = new HashSet<>();
         set.add(5);
         set.add(3);
         set.add(7);
         set.add(5);
         set.size();
-        System.out.println("Set : " + set + " in size " + set.size());
+        boolean isAdded = set.add(5);
+        System.out.println("Set content: " + set);
+        System.out.println("Set size = " + set.size());
+
+        if (!isAdded) {
+            System.out.println("Duplicate '5' was not added.");
+        }
+        if (set.size() == 3) {
+            System.out.println("Set contains only unique elements.");
+        }
     }
 
 // ================================
@@ -283,9 +288,11 @@ public class FourthSessionAnnaVerkhova {
      */
 
     public static <T> void printArray(T[] array) {
+        System.out.print("[ ");
         for (T element : array) {
-            System.out.println(element);
+            System.out.print(element + ",");
         }
+        System.out.println("]");
     }
 
 // ================================
@@ -299,10 +306,10 @@ public class FourthSessionAnnaVerkhova {
     public static void doubleValueCalc() {
         Calculator<Integer> calcInt = new Calculator<>(10);
         calcInt.doubleValue();
-        System.out.println("Result : " + calcInt.doubleValue());
+        System.out.println("Result from Integer : " + calcInt.doubleValue());
         Calculator<Double> calcD = new Calculator<>(25.6);
         calcD.doubleValue();
-        System.out.println("Result : " + calcD.doubleValue());
+        System.out.println("Result from Double : " + calcD.doubleValue());
     }
 
 // ================================
