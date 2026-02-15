@@ -1,8 +1,11 @@
 package org.practiceAnswers.AlisaPauliuchenkavaAnswers.person;
 
+import lombok.Getter;
+
 import java.io.Serializable;
 import java.util.Objects;
 
+@Getter
 public class Person implements Serializable {
     private static final long serialVersionUID = 1L;
 
